@@ -24,7 +24,7 @@ const classes = {
 };
 
 // initial state
-const initialStateData = {
+export const initialStateData = {
   email: '',
   password: ''
 }

@@ -15,12 +15,10 @@ import {
 } from '@material-ui/icons'
 
 
-export default class SideDrawerOptionsStaff extends Component {
+export default class SideDrawerOptions extends Component {
     render() {
-        if(this.props.isStaff){
-            
-        }
-
+        let items = this.props.isStaff ? staffOptions : nonStaffOptions
+        
         items = items.map((item, key) => (
             <ListItem key={key} button id="groups">
                 <ListItemIcon>
@@ -34,7 +32,7 @@ export default class SideDrawerOptionsStaff extends Component {
     }
 }
 
-const staffOptions = [
+export const staffOptions = [
     {
         label: "Dashboard",
         icon: <Dashboard />,
@@ -57,7 +55,7 @@ const staffOptions = [
     },
 ]
 
-const nonStaffOptions = [
+export const nonStaffOptions = [
     {
         label: "Dashboard",
         icon: <Dashboard />,
@@ -67,15 +65,7 @@ const nonStaffOptions = [
         icon: <Business />,
     },
     {
-        label: "Statistics",
-        icon: <TrendingUp />,
-    },
-    {
         label: "Leaderboard",
         icon: <LocalActivity />,
-    },
-    {
-        label: "Queries",
-        icon: <QuestionAnswer />,
     },
 ]

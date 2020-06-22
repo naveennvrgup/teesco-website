@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { AppBar, Toolbar, IconButton, MenuIcon, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import styles from '../SideDrawer/SideDrawer.styles'
+import styles from './SideDrawer.styles'
 import Logo from "../../assets/imgs/logo-white.png";
 
 import clsx from "clsx";

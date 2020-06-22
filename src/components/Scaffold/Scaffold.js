@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import Appbar from '../Appbar/Appbar'
-import SideDrawer from '../SideDrawer/SideDrawer'
+import Appbar from './Appbar'
+import SideDrawer from './SideDrawer'
 
 export default class Scaffold extends Component {
     render() {
