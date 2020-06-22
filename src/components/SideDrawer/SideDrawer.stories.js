@@ -12,7 +12,7 @@ export default {
   excludeStories: /.*Data$/, // export ending with Data wont be treated as a story
 };
 
-const data = {
+const initialStateData = {
   orgs: [
     { name: "E-Cell NITRR", logo: ecell },
     { name: "Avartan", logo: ecell },
@@ -23,7 +23,7 @@ const data = {
     top: ["Dashboard", "Org Profile", "Statistics", "Leaderboard", "Queries"],
     bottom: ["Certificates", "Settings", "Help"],
   },
-  org1: {
+  selectedOrg: {
     info: {
       name: "E-Cell NITRR",
       tagline: "Leaders Beyond Borders",
@@ -59,5 +59,5 @@ const data = {
   },
 };
 export const initialState = () => (
-  <PersistentDrawerLeft defaultData={object("state", data)} />
+  <PersistentDrawerLeft stateData={object("state", initialStateData)} />
 );
