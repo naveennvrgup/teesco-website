@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
-import { AppBar } from '@material-ui/core'
+import { AppBar, Toolbar, IconButton, MenuIcon, Typography } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
+import styles from '../SideDrawer/SideDrawer.styles'
+import Logo from "../../assets/imgs/logo-white.png";
 
-export default class Appbar extends Component {
+import clsx from "clsx";
+
+class Appbar extends Component {
     render() {
+        const { classes } = this.props
+
         return (
             <AppBar
                 position="fixed"
                 className={clsx(classes.appBar, {
-                    [classes.appBarShift]: open,
+                    [classes.appBarShift]: true,
                 })}
             >
                 <Toolbar>
@@ -20,9 +27,9 @@ export default class Appbar extends Component {
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={handleDrawerOpen}
+                        onClick={this.handleDrawerOpen}
                         edge="start"
-                        className={clsx(classes.menuButton, open && classes.hide)}
+                        className={clsx(classes.menuButton, true && classes.hide)}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -34,3 +41,5 @@ export default class Appbar extends Component {
         )
     }
 }
+
+export default withStyles(styles)(Appbar)

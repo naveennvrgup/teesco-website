@@ -68,3 +68,44 @@ const { orgs, org1, menuItems } = props.defaultData;
           ) : (
               <ChevronRightIcon />
             )}
+
+
+
+
+
+
+
+
+
+
+              <List style={{ marginLeft: "0px" }}>
+          {menuItems.bottom.map((item) => (
+            <ListItem button id="groups">
+              <ListItemIcon>
+                {item == "Certificates" ? (
+                  <Avatar
+                    className={classes.orange}
+                    style={{ width: "28px", height: "28px" }}
+                  >
+                    C
+                  </Avatar>
+                ) : item == "Settings" ? (
+                  <Avatar
+                    className={classes.orange}
+                    style={{ width: "28px", height: "28px" }}
+                  >
+                    S
+                  </Avatar>
+                ) : item == "Help" ? (
+                  <Avatar
+                    className={classes.orange}
+                    style={{ width: "28px", height: "28px" }}
+                  >
+                    H
+                  </Avatar>
+                ) : null}
+              </ListItemIcon>
+              <ListItemText primary={item} />
+            </ListItem>
+          ))}
+        </List>

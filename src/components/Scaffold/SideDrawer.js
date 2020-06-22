@@ -12,8 +12,6 @@ import {
   Divider,
   IconButton,
   Drawer,
-  Toolbar,
-  Avatar,
   List,
   ListItem,
   ListItemText,
@@ -24,24 +22,13 @@ import {
 import Menu from "@material-ui/core/Menu";
 
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-
-
-import MenuIcon from "@material-ui/icons/Menu";
-import LabelIcon from "@material-ui/icons/Label";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Grid from "@material-ui/core/Grid";
-import Logo from "../../assets/imgs/logo-white.png";
-import LogoDark from "../../assets/imgs/logo.png";
 import person from "../../assets/imgs/person.png";
-import FileCopyIcon from "@material-ui/icons/FileCopy";
 import GroupAddIcon from "@material-ui/icons/GroupAdd";
-import StarIcon from "@material-ui/icons/Star";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
 import "./Drawer.css";
 
+import SideDrawerOptions from './SideDrawerOptions'
 
 
 
@@ -85,7 +72,7 @@ class SideDrawer extends Component {
               className={classes.title}
               gutterBottom
             >
-              {selectedOrg.info.name}
+              E-Cell NITRR
             </Typography>
 
             <Typography
@@ -99,7 +86,7 @@ class SideDrawer extends Component {
               }}
               className={classes.pos}
             >
-              {selectedOrg.info.role}
+              Admin
             </Typography>
           </CardContent>
           <IconButton
@@ -122,7 +109,7 @@ class SideDrawer extends Component {
               <CardContent>
                 <Typography variant="h5">Switch Orgs</Typography>
                 <List>
-                  {orgs.map((el,i) => (
+                  {[].map((el,i) => (
                     <ListItem key={i} button>
                       <ListItemText style={{ textAlign: "center" }}>
                         <a href="#">{el.name}</a>
@@ -136,52 +123,6 @@ class SideDrawer extends Component {
           </Menu>
         </Card>
       </List>
-      <List style={{ marginLeft: "10px" }}>
-        {menuItems.top.map((item) => (
-          <ListItem button id="groups">
-            <ListItemIcon>
-              {/* <StarIcon style={{ color: "#3f51b5" }} /> */}
-              {item == "Dashboard" ? (
-                <Avatar
-                  className={classes.orange}
-                  style={{ width: "28px", height: "28px" }}
-                >
-                  D
-                </Avatar>
-              ) : item == "Org Profile" ? (
-                <Avatar
-                  className={classes.orange}
-                  style={{ width: "28px", height: "28px" }}
-                >
-                  O
-                </Avatar>
-              ) : item == "Statistics" ? (
-                <Avatar
-                  className={classes.orange}
-                  style={{ width: "28px", height: "28px" }}
-                >
-                  S
-                </Avatar>
-              ) : item == "Leaderboard" ? (
-                <Avatar
-                  className={classes.orange}
-                  style={{ width: "28px", height: "28px" }}
-                >
-                  L
-                </Avatar>
-              ) : item == "Queries" ? (
-                <Avatar
-                  className={classes.orange}
-                  style={{ width: "28px", height: "28px" }}
-                >
-                  Q
-                </Avatar>
-              ) : null}
-            </ListItemIcon>
-            <ListItemText primary={item} />
-          </ListItem>
-        ))}
-      </List>
 
       <div style={{ margin: 10 }}>
         <div className="groupHeader">
@@ -190,7 +131,8 @@ class SideDrawer extends Component {
             <GroupAddIcon />
           </IconButton>
         </div>
-        <List>
+        <SideDrawerOptions/>
+        {/* <List>
           {[].map((group) => (
             <ListItem
               button
@@ -211,38 +153,8 @@ class SideDrawer extends Component {
               <ListItemText primary={group.name} />
             </ListItem>
           ))}
-        </List>
-        <List style={{ marginLeft: "0px" }}>
-          {menuItems.bottom.map((item) => (
-            <ListItem button id="groups">
-              <ListItemIcon>
-                {item == "Certificates" ? (
-                  <Avatar
-                    className={classes.orange}
-                    style={{ width: "28px", height: "28px" }}
-                  >
-                    C
-                  </Avatar>
-                ) : item == "Settings" ? (
-                  <Avatar
-                    className={classes.orange}
-                    style={{ width: "28px", height: "28px" }}
-                  >
-                    S
-                  </Avatar>
-                ) : item == "Help" ? (
-                  <Avatar
-                    className={classes.orange}
-                    style={{ width: "28px", height: "28px" }}
-                  >
-                    H
-                  </Avatar>
-                ) : null}
-              </ListItemIcon>
-              <ListItemText primary={item} />
-            </ListItem>
-          ))}
-        </List>
+        </List> */}
+
       </div>
     </Drawer>
 
