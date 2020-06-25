@@ -8,14 +8,38 @@ import { makeErrorDict } from '../utils/APIUtils'
 
 // reducer
 const initialState = {
-    // showDrawer: true,
+    showDrawer: true,
+    showOrgSwitchMenu: false,
     selectedOrgIndex: 0,
+    groupsLoading: false,
+    groups: [
+        {
+            "id": 1,
+            "name": "Admin",
+            "memberCount": 1
+        },
+        {
+            "id": 2,
+            "name": "Volunteer",
+            "memberCount": 3
+        },
+        {
+            "id": 3,
+            "name": "Head Coordinators",
+            "memberCount": 1
+        },
+        {
+            "id": 4,
+            "name": "Managers",
+            "memberCount": 1
+        }
+    ],
     orgs: [
         {
             "id": 1,
             "org_name": "E Cell",
             "user_role": "Admin",
-            "profile_pic": "null",
+            "profile_pic": null,
             "route_slug": "0-e-cell",
             "tagline": "Leader Beyond Borders",
             "permissions": {
@@ -45,7 +69,7 @@ const initialState = {
             "id": 2,
             "org_name": "NITRR",
             "user_role": "Volunteer",
-            "profile_pic": "null",
+            "profile_pic": null,
             "route_slug": "2-nitrr",
             "tagline": "Work is worship",
             "permissions": {

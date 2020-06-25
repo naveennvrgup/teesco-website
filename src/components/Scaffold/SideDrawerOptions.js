@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import {
     ListItem,
     List,
@@ -15,10 +17,10 @@ import {
 } from '@material-ui/icons'
 
 
-export default class SideDrawerOptions extends Component {
+export class SideDrawerOptions extends Component {
     render() {
         let items = this.props.isStaff ? staffOptions : nonStaffOptions
-        
+
         items = items.map((item, key) => (
             <ListItem key={key} button id="groups">
                 <ListItemIcon>
@@ -31,6 +33,23 @@ export default class SideDrawerOptions extends Component {
         return <List>{items}</List>
     }
 }
+
+const mapStateToProps = (state) => {
+    const { scaffold } = state
+    const { selectedOrgIndex, orgs } = scaffold
+
+    return {
+        isStaff: orgs[selectedOrgIndex]['permissions']['Is Staff']['value']
+    }
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideDrawerOptions)
+
+
 
 export const staffOptions = [
     {
